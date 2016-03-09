@@ -70,11 +70,12 @@ QUnit.test("Most Popular Move", function(assert) {
 });
 QUnit.test("Reset", function(assert) {
     assert.expect(2);
+    controller.reset();
     controller.play("rock");
     controller.play("paper");
     controller.play("scissors");
-    assert.deepEqual(computer.moveCount, {"rock": 1, "paper": 1, "scissors": 1}, "Computer Move Tally Successfully Resets");
-    computer = overseasFactory();
+    assert.deepEqual(computer.moveCount, {"rock": 1, "paper": 1, "scissors": 1});
+    controller.reset();
     assert.deepEqual(computer.moveCount, {"rock": 0, "paper": 0, "scissors": 0}, "Computer Move Tally Successfully Resets");
 });
 controller.reset();
