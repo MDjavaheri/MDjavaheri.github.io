@@ -29,25 +29,19 @@
 //reset works 
 QUnit.module("scoreboard-specific");
 QUnit.test("tally up and reset", function(assert) {
-   assert.expect(8);
-   var scoreboard = newScoreBoard();
+   assert.expect(5);
    assert.deepEqual(scoreboard.scores, {"wins":0, "losses":0, "ties":0}, "Initialization Successul");
    scoreboard.win();
    assert.deepEqual(scoreboard.scores, {"wins":1, "losses":0, "ties":0}, "Win Successul");
-   assert.deepEqual($("#wins").text(), 1)
    scoreboard.lose();
    assert.deepEqual(scoreboard.scores, {"wins":1, "losses":1, "ties":0}, "Lose Successul");
-   assert.deepEqual($("#losses").text(), 1)
    scoreboard.tie();
    assert.deepEqual(scoreboard.scores, {"wins":1, "losses":1, "ties":1}, "Tie Successul");
-   assert.deepEqual($("#ties").text(), 1)
    scoreboard.reset();
    assert.deepEqual(scoreboard.scores, {"wins":0, "losses":0, "ties":0}, "Reset Successul");
 });
 
 QUnit.test("computer move tally", function(assert) {
-    var computer = overseasFactory();
-    var controller = newController();
     controller.shoot("rock");
     controller.shoot("rock");
     controller.shoot("rock");
