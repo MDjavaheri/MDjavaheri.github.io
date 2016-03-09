@@ -172,4 +172,8 @@ $(function() {
 		var strategy = $(this).val();
 		controller.newStrategy(strategy);
 	});	
+	//toggles display of testing fixture
+	$("#testBtn").click(function(){
+		$(".tests").toggle();
+	});
 })

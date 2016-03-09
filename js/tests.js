@@ -1,6 +1,4 @@
-$("#testBtn").click(function(){
-  $(".tests").toggleClass("hidden");
-});
+
 //QUnit Tests
 
 //Gameplay Tests
