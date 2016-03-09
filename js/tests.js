@@ -42,7 +42,7 @@ QUnit.test("Score Tally Works", function(assert) {
    assert.deepEqual(scoreboard.scores, {"wins":1, "losses":1, "ties":0}, "Lose Successul");
    scoreboard.tie();
    assert.deepEqual(scoreboard.scores, {"wins":1, "losses":1, "ties":1}, "Tie Successul");
-}
+});
 QUnit.test("Reset", function(assert) {
    scoreboard.reset();
    assert.deepEqual(scoreboard.scores, {"wins":0, "losses":0, "ties":0}, "Reset Successul");
