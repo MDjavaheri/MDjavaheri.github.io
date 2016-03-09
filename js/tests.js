@@ -77,7 +77,7 @@ QUnit.test("Reset", function(assert) {
     computer = overseasFactory();
     assert.deepEqual(computer.moveCount, {"rock": 0, "paper": 0, "scissors": 0}, "Computer Move Tally Successfully Resets");
 });
-computer = overseasFactory();;//reset
+controller.reset();
 QUnit.test("New Strategy", function(assert) {
     controller.newStrategy("Random"); 
     controller.newStrategy("Last"); 
@@ -86,63 +86,63 @@ QUnit.test("New Strategy", function(assert) {
 
 QUnit.module("Game Rules");//using last move to manipulate the computer
 QUnit.test("Rock beats Scissors", function(assert) {
-    scoreboard.reset();//reset 
+    scoreboard.reset(); 
     controller.newStrategy("last"); 
     controller.play("paper"); 
     controller.play("rock"); 
     assert.deepEqual(scoreboard.scores, {"wins":1, "losses":0, "ties":0}, "Rock > Scissors");
 });
 QUnit.test("Rock loses to Paper", function(assert) {
-    computer = overseasFactory();;//reset 
+    scoreboard.reset(); 
     controller.newStrategy("last"); 
     controller.play("rock"); 
     controller.play("rock"); 
     assert.deepEqual(scoreboard.scores, {"wins":0, "losses":1, "ties":0}, "Rock < Paper");
 });
 QUnit.test("Rock ties with Rock", function(assert) {
-    computer = overseasFactory();;//reset 
+    scoreboard.reset(); 
     controller.newStrategy("last"); 
     controller.play("scissors"); 
     controller.play("rock"); 
     assert.deepEqual(scoreboard.scores, {"wins":0, "losses":0, "ties":1}, "Rock === Rock");
 });
 QUnit.test("Scissors beats Paper", function(assert) {
-    computer = overseasFactory();;//reset 
+    scoreboard.reset(); 
     controller.newStrategy("last"); 
     controller.play("rock"); 
     controller.play("scissors"); 
     assert.deepEqual(scoreboard.scores, {"wins":1, "losses":0, "ties":0}, "Scissors > Paper");
 });
 QUnit.test("Scissors loses to Rock", function(assert) {
-    computer = overseasFactory();;//reset 
+    scoreboard.reset(); 
     controller.newStrategy("last");
     controller.play("scissors"); 
     controller.play("scissors"); 
     assert.deepEqual(scoreboard.scores, {"wins":0, "losses":1, "ties":0}, "Scissors < Rock");
 });
 QUnit.test("Scissors ties with Scissors", function(assert) {
-    computer = overseasFactory();;//reset 
+    scoreboard.reset(); 
     controller.newStrategy("last"); 
     controller.play("rock"); 
     controller.play("scissors"); 
     assert.deepEqual(scoreboard.scores, {"wins":0, "losses":0, "ties":1}, "Scissors === Scissors");    
 });
 QUnit.test("Paper beats Rock", function(assert) {
-    computer = overseasFactory();;//reset 
+    controller.reset(); 
     controller.newStrategy("last"); 
     controller.play("scissors"); 
     controller.play("paper"); 
     assert.deepEqual(scoreboard.scores, {"wins":1, "losses":0, "ties":0}, "Paper > Rock");    
 });
 QUnit.test("Paper loses to Scissors", function(assert) {
-    computer = overseasFactory();;//reset 
+    controller.reset(); 
     controller.newStrategy("last"); 
     controller.play("paper"); 
     controller.play("paper"); 
     assert.deepEqual(scoreboard.scores, {"wins":0, "losses":1, "ties":0}, "Paper < Scissors");    
 });
 QUnit.test("Paper ties with Paper", function(assert) {
-    computer = overseasFactory();;//reset 
+   controller.reset(); 
     controller.newStrategy("last"); 
     controller.play("rock"); 
     controller.play("paper"); 
