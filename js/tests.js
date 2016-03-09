@@ -27,10 +27,10 @@
 
 //Controller
 //reset works 
+var scoreboard = newScoreBoard();
 QUnit.module("scoreboard-specific");
 QUnit.test("tally up and reset", function(assert) {
    assert.expect(5);
-   var scoreboard = newScoreBoard();
    assert.deepEqual(scoreboard.scores, {"wins":0, "losses":0, "ties":0}, "Initialization Successul");
    scoreboard.win();
    assert.deepEqual(scoreboard.scores, {"wins":1, "losses":0, "ties":0}, "Win Successul");
@@ -42,10 +42,10 @@ QUnit.test("tally up and reset", function(assert) {
    assert.deepEqual(scoreboard.scores, {"wins":0, "losses":0, "ties":0}, "Reset Successul");
 });
 
+var computer = overseasFactory();
+var controller = newController();
 QUnit.module("General")
 QUnit.test("computer move dependants", function(assert) {
-    var computer = overseasFactory();
-    var controller = newController();
     assert.expect(6);
     assert.ok(computer.lastMove() !== undefined,  "Last Move defaults to random move")
     controller.play("rock");
@@ -56,8 +56,8 @@ QUnit.test("computer move dependants", function(assert) {
     controller.play("rock");
     controller.play("paper");
     controller.play("paper");
-    assert.deepEqual(computer.lastMoveCounter, "scissors", "Last Move updates correctly")
     controller.play("paper");
+    assert.deepEqual(computer.lastMoveCounter, "scissors", "Last Move updates correctly")
     controller.play("scissors");
     controller.play("scissors");
     assert.deepEqual(computer.moveCount, {"rock": 5, "paper": 3, "scissors": 2}, "Computer Move Tally Successfully Updates");
