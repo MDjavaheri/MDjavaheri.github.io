@@ -4,9 +4,7 @@
 		<title>Test Fixture</title>
 		<meta charset="utf-8">
 		<!--CSS-->
-		<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" />
 	    <link href="https://code.jquery.com/qunit/qunit-1.22.0.css" rel="stylesheet">
-		<link href="css/rps.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body>
 <!--QUnit Testing Fixture, Visibility Togglable via button-->
@@ -120,8 +118,7 @@
 							randomMove: function() {
 								var moves = new Array("rock", "paper", "scissors");
 								return moves[Math.round(2 * Math.random())];
-							},
-							
+							},	
 						}
 						return computer;
 					};
