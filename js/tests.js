@@ -60,8 +60,8 @@ QUnit.test("Last Move Counter Updates", function(assert) {
     controller.play("paper");
     assert.deepEqual(computer.lastMoveCounter, "scissors", "Last Move updates correctly")
 });
-controller.reset();//reset
 QUnit.test("Move Tally Works", function(assert) {
+    controller.reset();//reset
     controller.play("scissors");
     controller.play("rock");
     controller.play("rock");
@@ -109,12 +109,12 @@ controller.reset();//reset
 QUnit.test("New Strategy", function(assert) {
     controller.newStrategy("Random"); 
     controller.newStrategy("Last"); 
-    assert.deepEqual(computer.strategy, "last", "Controller successfully updates computer strategy");   
+    assert.deepEqual(computer.strategy, "Last", "Controller successfully updates computer strategy");   
 });
 
 QUnit.module("Game Rules");//using last move to manipulate the computer
 QUnit.test("Rock beats Scissors", function(assert) {
-    controller.reset();//reset 
+    scoreboard.reset();//reset 
     controller.newStrategy("last"); 
     controller.play("paper"); 
     controller.play("rock"); 
