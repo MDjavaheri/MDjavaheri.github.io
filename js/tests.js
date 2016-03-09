@@ -43,9 +43,9 @@ QUnit.test("tally up and reset", function(assert) {
    assert.deepEqual($("#ties").text(), 1)
    scoreboard.reset();
    assert.deepEqual(scoreboard.scores, {"wins":0, "losses":0, "ties":0}, "Reset Successul");
-})
+});
 
-QUnit.test("computer move tally", {
+QUnit.test("computer move tally", function(assert) {
     var computer = overseasFactory();
     var controller = newController();
     controller.shoot("rock");
@@ -59,4 +59,4 @@ QUnit.test("computer move tally", {
     controller.shoot("scissors");
     controller.shoot("scissors");
     assert.deepEqual(computer.moveCount, {"rock": 5, "paper": 3, "scissors": 2}, "Computer Move Tally Successfully Updates");
-})
+});
