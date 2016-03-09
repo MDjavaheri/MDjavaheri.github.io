@@ -42,18 +42,26 @@ QUnit.test("tally up and reset", function(assert) {
    assert.deepEqual(scoreboard.scores, {"wins":0, "losses":0, "ties":0}, "Reset Successul");
 });
 
-QUnit.test("computer move tally", function(assert) {
+QUnit.module("General")
+QUnit.test("computer move dependants", function(assert) {
     var computer = overseasFactory();
     var controller = newController();
-    controller.shoot("rock");
-    controller.shoot("rock");
-    controller.shoot("rock");
-    controller.shoot("rock");
-    controller.shoot("rock");
-    controller.shoot("paper");
-    controller.shoot("paper");
-    controller.shoot("paper");
-    controller.shoot("scissors");
-    controller.shoot("scissors");
+    assert.expect(6);
+    assert.ok(computer.lastMove() !== undefined,  "Last Move defaults to random move")
+    controller.play("rock");
+    controller.play("rock");
+    assert.deepEqual(computer.lastMoveCounter, "paper", "Last Move updates correctly")
+    controller.play("rock");
+    controller.play("rock");
+    controller.play("rock");
+    controller.play("paper");
+    controller.play("paper");
+    assert.deepEqual(computer.lastMoveCounter, "scissors", "Last Move updates correctly")
+    controller.play("paper");
+    controller.play("scissors");
+    controller.play("scissors");
     assert.deepEqual(computer.moveCount, {"rock": 5, "paper": 3, "scissors": 2}, "Computer Move Tally Successfully Updates");
+    assert.deepEqual(computer.faveMove(), "paper", "Favorite Move Successful");
+    controller.reset();
+    assert.deepEqual(computer.moveCount, {"rock": 0, "paper": 0, "scissors": 0}, "Computer Move Tally Successfully Resets"
 });
