@@ -30,6 +30,7 @@
 QUnit.module("scoreboard-specific");
 QUnit.test("tally up and reset", function(assert) {
    assert.expect(5);
+   var scoreboard = newScoreBoard();
    assert.deepEqual(scoreboard.scores, {"wins":0, "losses":0, "ties":0}, "Initialization Successul");
    scoreboard.win();
    assert.deepEqual(scoreboard.scores, {"wins":1, "losses":0, "ties":0}, "Win Successul");
@@ -42,6 +43,8 @@ QUnit.test("tally up and reset", function(assert) {
 });
 
 QUnit.test("computer move tally", function(assert) {
+    var computer = overseasFactory();
+    var controller = newController();
     controller.shoot("rock");
     controller.shoot("rock");
     controller.shoot("rock");
