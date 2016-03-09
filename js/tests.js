@@ -63,5 +63,5 @@ QUnit.test("computer move dependants", function(assert) {
     assert.deepEqual(computer.moveCount, {"rock": 5, "paper": 3, "scissors": 2}, "Computer Move Tally Successfully Updates");
     assert.deepEqual(computer.faveMove(), "paper", "Favorite Move Successful");
     controller.reset();
-    assert.deepEqual(computer.moveCount, {"rock": 0, "paper": 0, "scissors": 0}, "Computer Move Tally Successfully Resets"
+    assert.deepEqual(computer.moveCount, {"rock": 0, "paper": 0, "scissors": 0}, "Computer Move Tally Successfully Resets");
 });
