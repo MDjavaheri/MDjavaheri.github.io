@@ -50,7 +50,6 @@ QUnit.test("Reset", function(assert) {
 
 QUnit.module("Computer");
 QUnit.test("Last Move Defaults to Random", function(assert) {
-    assert.expect(6);
     assert.ok(computer.lastMove() !== undefined,  "Last Move defaults to random move when there are no previous player moves")
 });
 QUnit.test("Last Move Counter Updates", function(assert) {
