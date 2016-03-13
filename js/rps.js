@@ -36,7 +36,7 @@ $(function() {
 
 				//print standard part of log
 				$("#log").append(this.turn++ + ". Player: " + humanMove + ", Computer: " + compMove + " | ");
-				$("#log").animate({scrollTop: $(this).height() + 16});
+
 				
 				if (humanMove === compMove) {//It's a draw!
 					scoreBoard.tie();
@@ -50,7 +50,7 @@ $(function() {
 					scoreBoard.lose();
 					$("#log").append("You lost!<br>");
 				}
-				
+				$("#log").animate({scrollTop: $(this).height() + 16});
 				//Update computer move count with most frequently successful move (counter of the user's most frequent)
 				computer.moveCount[counterMove[humanMove]]++;
 				
