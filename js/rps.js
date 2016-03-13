@@ -35,9 +35,8 @@ $(function() {
 				var compMove = computer.move();
 
 				//print standard part of log
-				$("#log")
-					.append(this.turn++ + ". Player: " + humanMove + ", Computer: " + compMove + " | ")
-					.animate({scrollTop: $(this).height() + 16});
+				$("#log").append(this.turn++ + ". Player: " + humanMove + ", Computer: " + compMove + " | ");
+				$("#log").animate({scrollTop: $(this).height() + 16});
 				
 				if (humanMove === compMove) {//It's a draw!
 					scoreBoard.tie();
