@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html> 
+<html>
 	<head>
 		<title>Rock, Paper, Scissors!</title>
 		<meta charset="utf-8">
 		<!--CSS-->
-		<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
 	    <link href="https://code.jquery.com/qunit/qunit-1.22.0.css" rel="stylesheet">
 		<link href="css/rps.css" type="text/css" rel="stylesheet" />
 	</head>
@@ -26,7 +26,7 @@
 				</div>
 			</div>
 			<p id="taunt">Pick an opponent gameplay strategy to mix it up a little.</p>
-			
+
 
 			<!--Pick a game strategy for the Computer and a move to play-->
 			<div id="playerDashboard" class="container">
@@ -42,23 +42,23 @@
 				<div id="strategy" class="controls">
 					<h3>Computer Strategy: <span>Random</span> Move</h3> <!--Make into a bootstrap button-->
 					<div class="btn-group" role="group" aria-label="">
-						<button type="button" class="btn btn-default strButton" value="Last">Last Move</button>
-						<button type="button" class="btn btn-default strButton" value="Most Popular" >Most Popular Move</button>
-						<button type="button" class="btn btn-default strButton" value="Random">Random</button>
+						<button type="button" class="btn btn-default strButton" value="last">Last Move</button>
+						<button type="button" class="btn btn-default strButton" value="mostPopular" >Most Popular Move</button>
+						<button type="button" class="btn btn-default strButton" value="random">Random</button>
 					</div>
 				</div>
 				<!--Pick Your Next Move-->
 				<div id="playerMoves" class="controls">
 					<h3>Available Moves</h3>
-					<button type="button" class="btn btn-info move" value="rock">
+					<button type="button" class="btn btn-info move" data="rock">
 						  <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
 							Rock
 					</button>
-					<button type="button" class="btn btn-info move" value="paper">
+					<button type="button" class="btn btn-info move" data="paper">
 						<span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>
 						Paper
 					</button>
-					<button type="button" class="btn btn-info move" value="scissors">
+					<button type="button" class="btn btn-info move" data="scissors">
 						<span class="glyphicon glyphicon-scissors" aria-hidden="true"></span>
 						Scissors
 					</button>
@@ -68,16 +68,16 @@
 		<footer>
 			<!--Game Log of Moves and Results, also logs Test Results -->
 			<div class="well" id="log">
+				<ol id="log">
+				</ol>
 				<!--<span>Log</span>-->
 			</div>
 			<a href="tests.html"><h3>Test Fixture</h3></a>
 			<!--JS-->
-			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-			<script src="js/bootstrap.min.js" type="text/javascript"></script>
-			<script src="js/underscore-min.js" type="text/javascript"></script>
-  		    <script src="//code.jquery.com/qunit/qunit-1.22.0.js"></script>
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript"></script>
 			<script src="js/rps.js" type="text/javascript"></script>
-			<script src="js/tests.js" type="text/javascript"></script>
 		</footer>
 	</body>
 </html>

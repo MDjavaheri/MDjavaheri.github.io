@@ -35,12 +35,7 @@ body {
 #ties {
 	color: orange;
 }
-#log {
-	height: 200px;
-	text-align: left;
-	overflow: auto;
-}
-#log span {
+#log ol {
 	border: thin, solid;
 	text-align: left;
 	top: 0;
@@ -49,4 +44,7 @@ body {
 #log {
 	width: 75%;
 	margin-top: 20px;
+	height: 200px;
+	text-align: left;
+	overflow: auto;
 }
